@@ -22,7 +22,7 @@ export const auth = betterAuth({
    },
    rateLimit: {
       window: 60, // time window in seconds
-      max: 10,
+      max: 30, // max requests per window
    },
    trustedOrigins: [
       "chrome-extension://faapjophjjnpgikffnbjjiikppambglm",
