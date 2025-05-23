@@ -26,5 +26,6 @@ export const auth = betterAuth({
    },
    trustedOrigins: [
       "chrome-extension://faapjophjjnpgikffnbjjiikppambglm",
+      "chrome-extension://cjaecgdalifbiajfmkkmiffdhcnckmih",
    ]
 })
