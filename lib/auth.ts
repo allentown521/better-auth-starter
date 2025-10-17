@@ -23,15 +23,19 @@ export const auth = betterAuth({
   rateLimit: {
     enabled: false,
   },
+  ...(process.env.CROSS_SUB_DOMAIN && {
+    crossSubDomainCookies: {
+      enabled: true,
+      domain: process.env.CROSS_SUB_DOMAIN,
+    },
+  }),
   session: {
     cookieCache: {
       enabled: true,
       maxAge: 5 * 60, // Cache duration in seconds
     },
   },
-  trustedOrigins: [
-    "chrome-extension://faapjophjjnpgikffnbjjiikppambglm",
-    "chrome-extension://cjaecgdalifbiajfmkkmiffdhcnckmih",
-    "cobomoibncenbdelpmdmhfmanbffdcfn",
-  ],
+  ...(process.env.TRUSTED_ORIGINS && {
+    trustedOrigins: process.env.TRUSTED_ORIGINS.split(",").map((origin) => origin.trim()),
+  }),
 });
