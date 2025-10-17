@@ -21,8 +21,7 @@ export const auth = betterAuth({
     },
   },
   rateLimit: {
-    window: 60, // time window in seconds
-    max: 30, // max requests per window
+    enabled: false,
   },
   session: {
     cookieCache: {
@@ -33,5 +32,6 @@ export const auth = betterAuth({
   trustedOrigins: [
     "chrome-extension://faapjophjjnpgikffnbjjiikppambglm",
     "chrome-extension://cjaecgdalifbiajfmkkmiffdhcnckmih",
+    "cobomoibncenbdelpmdmhfmanbffdcfn",
   ],
 });
